@@ -60,6 +60,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   path: /
+  port: 8044
   hosts:
     - mojaloop-simulators.local
   tls: []

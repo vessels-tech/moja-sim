@@ -87,3 +87,5 @@ I think we will need to expose our endpoints using localtunnel or something, so 
 
 
 
+After deploying with tiller, I see the errors on the `nginx-ingress-controller`
+- "default/dusty-waterbuffalo-simulator" does not have any active Endpoint.
