@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  simulator_1:
+    container_name: simulator_1
+    # image: mojaloop/simulator:latest
+    build: ./simulator
+    volumes:
+      - ./simulator/package.json:/opt/simulators/package.json
+      - ./simulator/src:/opt/simulators/src
+      - ./simulator/node_modules:/opt/simulators/node_modules
+    ports:
+      - "8444:8444"
+    environment:
+      PARTIES_ENDPOINT: 'http://35.247.170.113'
+      TRANSFERS_ENDPOINT: 'http://35.247.170.113'
+      QUOTES_ENDPOINT: 'http://35.247.170.113'
+
+      # QUOTES_ENDPOINT 	Mojaloop Callback Endpoint for Quotes 	'http://localhost:1080'
+      # TRANSFERS_ENDPOINT 	Mojaloop Callback Endpoint for Transfers 	'http://localhost:1080'
+      # TRANSFERS_FULFIL_RESPONSE_DISABLED 	Flag to disabled the Fulfil response callback to the TRANSFER_ENDPOINT 	'false'
+      # TRANSFERS_FULFILMENT 	ILP Fulfilment value 	'XoSz1cL0tljJSCp_VtIYmPNw-zFUgGfbUqf69AagUzY'
+      # TRANSFERS_CONDITION 	ILP Fulfilment condition 	'HOr22-H3AfTDHrSkPjJtVPRdKouuMkDXTR4ejlQa8Ks'
+      # TRANSFERS_ILPPACKET 	ILP Packet 	'AQAAAAAAAADIEHByaXZhdGUucGF5
+    command:
+      - "npm"
+      - "run"
+      - "dev"
+    
