@@ -89,3 +89,12 @@ I think we will need to expose our endpoints using localtunnel or something, so 
 
 After deploying with tiller, I see the errors on the `nginx-ingress-controller`
 - "default/dusty-waterbuffalo-simulator" does not have any active Endpoint.
+
+
+## Packaging chart from local
+```bash
+cd /Users/ldaly/developer/vessels/mojaloop/moja-sim/simulator/helm_chart/simulators
+helm package
+
+helm install --name=moja-sim --namespace=moja-sim /Users/ldaly/developer/vessels/mojaloop/moja-sim/simulator/helm_chart/simulators/simulators-4.2.0.tgz
+```

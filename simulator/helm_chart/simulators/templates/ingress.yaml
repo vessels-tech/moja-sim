@@ -7,7 +7,8 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app: {{ template "simulators.name" . }}
+    # app: {{ template "simulators.name" . }}
+    app: {{ $fullName }}
     chart: {{ template "simulators.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
