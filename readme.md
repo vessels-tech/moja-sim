@@ -98,3 +98,18 @@ helm package
 
 helm install --name=moja-sim --namespace=moja-sim /Users/ldaly/developer/vessels/mojaloop/moja-sim/simulator/helm_chart/simulators/simulators-4.2.0.tgz
 ```
+
+
+## login to container
+
+```bash
+kubectl exec -n mojaloop moja-sim-simulators-576bc59688-2mvp2 -i -t sh
+```
+
+
+
+## Building and deploying to cluster:
+```bash
+make docker
+make redeploy
+```

@@ -107,7 +107,6 @@ exports.getPartiesByTypeAndId = function (req, h) {
           'FSPIOP-Source': 'payeefsp',
           'FSPIOP-Destination': req.headers['fspiop-source'],
           'Date': req.headers['date'],
-          'Host': partiesHost,
         },
         rejectUnauthorized: false,
         body: JSON.stringify(myCache.get(req.params.id))
